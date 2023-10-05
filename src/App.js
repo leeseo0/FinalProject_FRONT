@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MainPage from './pages/Main';
+import MyPage from './pages/MyPage';
+import Navbar from "./components/Navbar";
+import Bookmark from './pages/Bookmark';
+import Record from './pages/RecordPage/TravelRecordPage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<MainPage />} /> {/* 메인페이지 */}
+          <Route path="/my-page" element={<MyPage />} /> {/* 마이페이지 */}
+          <Route path="/bookmark-page" element={<Bookmark />} /> {/* 북마크 페이지 */}
+          <Route path="/record-page" element={<Record />} /> {/* 여행기록 페이지 */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
