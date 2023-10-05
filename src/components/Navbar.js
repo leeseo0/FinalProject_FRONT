@@ -18,6 +18,9 @@ const Navbar = () => {
             <Link to="/">메인</Link>
           </li>
           <li>
+            <Link to="/my-page">마이페이지</Link>
+          </li>
+          <li>
             <Link to="/bookmark-page">북마크</Link>
           </li>
           <li>
